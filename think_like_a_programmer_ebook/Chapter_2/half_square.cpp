@@ -8,7 +8,7 @@ string halfASquare() {
     string result = "";
 
   for(int row = 1; row <= 5; row++) {
-      for(int i = 6 - row; i >= 1; i--) {
+      for(int numberOfHashes = 6 - row; numberOfHashes >= 1; numberOfHashes--) {
           result += "#";
       }
       result += "\n";
@@ -27,4 +27,3 @@ int main() {
 
     return 0;
 }
-
