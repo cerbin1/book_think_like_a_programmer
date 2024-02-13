@@ -30,7 +30,13 @@ string decodeNextNumber(int numbers);
 
 int stringToNumber(string numberAsString);
 
-char mode = 'U';
+enum Mode {
+  UPPERCASE,
+  LOWERCASE,
+  PUNCTUATION
+};
+
+Mode mode = UPPERCASE;
 
 int main() {
   string numbers =
@@ -77,30 +83,30 @@ string decodeNextNumber(int number) {
 
   switch (mode) {
     int result;
-  case 'U':
+  case UPPERCASE:
     result = number % 27;
     if (result == 0) {
-      mode = 'L';
+      mode = LOWERCASE;
       return "";
     } else {
       return uppercaseCharacters[result - 1];
     }
     break;
 
-  case 'L':
+  case LOWERCASE:
     result = number % 27;
     if (result == 0) {
-      mode = 'P';
+      mode = PUNCTUATION;
       return "";
     } else {
       return lowercaseCharacters[result - 1];
     }
     break;
 
-  case 'P':
+  case PUNCTUATION:
     result = number % 9;
     if (result == 0) {
-      mode = 'U';
+      mode = UPPERCASE;
       return "";
     } else {
       return punctuationCharacters[result - 1];
