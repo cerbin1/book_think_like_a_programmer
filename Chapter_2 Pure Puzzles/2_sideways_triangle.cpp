@@ -1,14 +1,25 @@
 #include <iostream>
-using std::cin;
-using std::cout;
 
 using namespace std;
+
+/*******************************************
+Write a program that uses only two output statements, cout << "#" and cout <<
+"\n", to produce a pattern of hash symbols shaped like a sideways triangle:
+#
+##
+###
+####
+###
+##
+#
+*******************************************/
 
 string sidewaysTriangle() {
   string result = "";
 
   for (int row = 1; row <= 7; row++) {
-    for (int numberOfHashes = 4 - abs(row - 4); numberOfHashes > 0; numberOfHashes--) {
+    for (int numberOfHashes = 4 - abs(row - 4); numberOfHashes > 0;
+         numberOfHashes--) {
       result += "#";
     }
     result += "\n";
@@ -27,4 +38,3 @@ int main() {
 
   return 0;
 }
-
