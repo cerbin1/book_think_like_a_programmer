@@ -141,25 +141,25 @@ string binaryToHexadecimal(string binaryNumberInput) {
 string decimalToBinary(string decimalNumberInput) {
   string binary = "";
 
-    int decimal = stoi(decimalNumberInput);
-    int power;
-    for (int i = 0; i < 1000; i++) {
-      if (pow(2, i) > decimal) {
-        power = i - 1;
-        break;
-      }
+  int decimal = stoi(decimalNumberInput);
+  int power;
+  for (int i = 0; i < 1000; i++) {
+    if (pow(2, i) > decimal) {
+      power = i - 1;
+      break;
     }
+  }
 
-    while (power >= 0) {
-      int nextPower = pow(2, power);
-      if (nextPower > decimal) {
-        binary += "0";
-      } else {
-        binary += "1";
-        decimal -= nextPower;
-      }
-      power--;
+  while (power >= 0) {
+    int nextPower = pow(2, power);
+    if (nextPower > decimal) {
+      binary += "0";
+    } else {
+      binary += "1";
+      decimal -= nextPower;
     }
+    power--;
+  }
 
   return binary;
 }
